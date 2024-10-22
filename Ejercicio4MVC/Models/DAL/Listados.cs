@@ -1,6 +1,6 @@
-﻿using Ejercicio4.Models.ENT;
+﻿using Ejercicio4MVC.Models.ENT;
 
-namespace Ejercicio4.Models.DAL
+namespace Ejercicio4MVC.Models.DAL
 {
     public class Listados
     {

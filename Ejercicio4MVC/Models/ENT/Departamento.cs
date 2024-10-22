@@ -1,4 +1,4 @@
-﻿namespace Ejercicio4.Models.ENT {
+﻿namespace Ejercicio4MVC.Models.ENT {
 
     public class Departamento
     {
