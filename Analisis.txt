@@ -1,0 +1,24 @@
+Entidades:
+	Persona
+		- String nombre (get:set)
+		- String apellido (get:set)
+		- Int edad (get:set)
+		- Int idDepartamento (get:set)
+
+	Departamento
+		- Int IdDepartamento (get)
+		- String Nombre (get:set)
+
+DAL:
+	Listados
+		public static List<Persona> ObtenerPersonas()
+		public static List<Departamento> ObtenerDepartamentos()
+
+VM:
+	EditarPersonasVM:Persona
+		- List<Departamentos> departamentos(get)
+	EditarPersonaVM () {
+		departamentos = Listados.ObtenerDepartamentos()
+	}
+
+
