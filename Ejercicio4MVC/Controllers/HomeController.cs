@@ -26,7 +26,8 @@ namespace Ejercicio4MVC.Controllers
             return View();
         }
 
-        public IActionResult EditarPersonas() {
+        public IActionResult EditarPersonas()
+        {
             Random rnd = new Random();
             List<Persona> personas = Listados.ObtenerPersonas();
             Persona personaSeleccionada = personas[rnd.Next(personas.Count)];
