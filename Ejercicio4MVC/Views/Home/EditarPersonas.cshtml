@@ -10,28 +10,39 @@
         </style>
     </head>
     <body>
+        <h1>Editar Persona:</h1>
         <form style="text-align: center;">
-            <label for="nombre">Nombre: </label>
-            <input name="nombre" value="@Model.Nombre" type="text" /> <br />
-            <label for="apellidos">Apellidos:</label>
-            <input name="apellidos" type="text" value="@Model.Apellidos" /> <br />
-            <label for="edad">Edad: </label>
-            <input value="@Model.Edad" name="edad" type="number" /><br />
-            <label for="dpto">Departamento:</label>
-            <select name="dpto">
-            @foreach (Departamento dpto in Model.departamentos)
-            {
-                if (dpto.Id == Model.IdDepartamento)
-                {
-                    <option selected="selected" value="@dpto.Id">@dpto.Nombre</option>
-                }else
-                {
-                    <option value="@dpto.Id">@dpto.Nombre</option>
-                }
-               
-            }
-            </select><br />
-            <input type="submit" value="Guardar" />
+            <div class="mb-3">
+            <label for="nombre" class="col-sm-2 col-form-label">Nombre: </label>
+            <input class="col-sm-2 col-form-label" name="nombre" value="@Model.Nombre" type="text" />
+        </div>
+            <div class="mb-3">
+            <label for="apellidos" class="col-sm-2 col-form-label">Apellidos:</label>
+            <input class="col-sm-2 col-form-label" name="apellidos" type="text" value="@Model.Apellidos" />
+        </div>
+            <div class="mb-3">
+            <label for="edad" class="col-sm-2 col-form-label">Edad: </label>
+            <input class="col-sm-2 col-form-label" value="@Model.Edad" name="edad" type="number" />
+            </div>
+            <div class="mb-3">
+            <label class="col-sm-2 col-form-label" for="dpto">Departamento:</label>
+            <select class="col-sm-2 col-form-label"
+                name="dpto">
+                    @foreach (Departamento dpto in Model.departamentos)
+                    {
+                        if (dpto.Id == Model.IdDepartamento)
+                        {
+                            <option value="@dpto.Id" selected>@dpto.Nombre</option>
+                        }
+                        else
+                        {
+                            <option value="@dpto.Id">@dpto.Nombre</option>
+                        }
+
+                    }
+                </select><br />
+            </div>
+            <input class="btn btn-primary mb-3" type="submit" value="Guardar" />
         </form>
     </body>
     </html>
