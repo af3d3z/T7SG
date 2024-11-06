@@ -1,0 +1,19 @@
+﻿Capa Entidades:
+	+ Mision (Gestiona las misiones que efectuará Mando):
+		+ Int Id  { get }
+		+ String Titulo { get; set;}
+		+ String Descripcion { get; set; }
+		+ Int Recompensa { get; set; }
+
+		+ Mision(Int Id, String Titulo, String Descripcion, Int Recompensa)
+
+Capa DAL:
+	+ ListaMisiones (Accede a la base de datos y provee de la lista de misiones):
+		+ static List<Mision> GetMisiones()
+
+Capa BL: 
+	+ ListaMisiones (Accede a la DAL y provee de la lista si puede en base a las reglas del comercio)
+
+Capa ViewModels:
+	+ ListadoMisionesVM
+	+ DetallesMisionVM
