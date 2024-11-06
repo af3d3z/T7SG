@@ -1,3 +1,5 @@
+using BL;
+using ENT;
 using Mandaloriano.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -16,6 +18,15 @@ namespace Mandaloriano.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Mandaloriano() {
+            return View(ListaMisionesBL.GetMisionesBL());
+        }
+
+        [HttpPost]
+        public IActionResult Mandaloriano(int id) {
+            return View(ListaMisionesBL.GetMisionesBL());
         }
 
         public IActionResult Privacy()

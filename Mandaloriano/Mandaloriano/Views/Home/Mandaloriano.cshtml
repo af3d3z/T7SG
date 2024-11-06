@@ -1,0 +1,39 @@
+﻿@using ENT;
+@model List<Mision>
+
+<h2>Seleccionar misión:</h2>
+
+@if (Model != null)
+{
+    <form method="post">
+        <label for="misiones">Elige una misión:</label>
+        <select name="misionID">
+            @foreach (var mision in Model)
+            {
+                <option value="@mision.ID">@mision.Titulo</option>    
+            }
+        </select>
+        <button type="submit">Ver detalles</button>
+    </form>
+
+    <div>
+        @if (HttpContext. == "POST" && Request.Form["misionId"].Count > 0)
+        {
+            int misionId = int.Parse(Request.Form["misionId"]);
+            var misionSeleccionada = Model[misionId];
+
+            if (misionSeleccionada != null)
+            {
+                <h3>Detalles de la misión:</h3>
+                <p>@misionSeleccionada.Descripcion</p>
+                <h3>Recompensa:</h3>
+                <p>@misionSeleccionada.Recompensa créditos</p>
+            }
+        }
+    </div>
+}
+else
+{
+    <h3>Grogu está durmiendo, no querrás despertarlo ¿verdad?</h3>
+    <h4>Las misiones volverán a estar activas a partir de las 8 AM</h4>
+}

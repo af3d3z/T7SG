@@ -13,7 +13,4 @@ Capa DAL:
 
 Capa BL: 
 	+ ListaMisiones (Accede a la DAL y provee de la lista si puede en base a las reglas del comercio)
-
-Capa ViewModels:
-	+ ListadoMisionesVM
-	+ DetallesMisionVM
+		+ static List<Mision> GetMisionesBL()
