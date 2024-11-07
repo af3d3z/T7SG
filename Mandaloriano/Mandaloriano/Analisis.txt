@@ -1,10 +1,18 @@
 ﻿Capa Entidades:
 	+ Mision (Gestiona las misiones que efectuará Mando):
+		// atributos
+		- Int _id
+		- String _titulo
+		- String _descripcion
+		- Int _recompensa
+		// Propiedades
 		+ Int Id  { get }
 		+ String Titulo { get; set;}
 		+ String Descripcion { get; set; }
 		+ Int Recompensa { get; set; }
 
+		// constructores
+		+ Mision(Int Id)
 		+ Mision(Int Id, String Titulo, String Descripcion, Int Recompensa)
 
 Capa DAL:
@@ -14,3 +22,15 @@ Capa DAL:
 Capa BL: 
 	+ ListaMisiones (Accede a la DAL y provee de la lista si puede en base a las reglas del comercio)
 		+ static List<Mision> GetMisionesBL()
+
+Capa UI:
+	ViewModels:
+		+ ListaYMisionVM:
+			// atributos
+			- List<Mision> _listaMisiones
+			- Mision _misionSeleccionada
+			// propiedades
+			+ List<Mision> ListaMisiones
+			+ Mision MisionSeleccionada
+			// constructor
+			+ ListaYMisionVM(id)

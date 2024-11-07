@@ -1,20 +1,23 @@
-﻿@using ENT;
-@model List<Mision>
+﻿@model Mandaloriano.Models.ViewModels.ListaYMisionVM
 
 <h2>Seleccionar misión:</h2>
 
 @if (Model != null)
 {
-    <form method="post" action="">
+    <form method="post">
         <label for="misiones">Elige una misión:</label>
         <select name="misionID">
-            @foreach (var mision in Model)
+            @foreach (var mision in Model.ListaMisiones)
             {
-                <option value="@mision.ID">@mision.Titulo</option>    
+                <option value="@mision.ID">@mision.Titulo</option>
             }
         </select>
         <button type="submit">Ver detalles</button>
     </form>
+
+    <h3>Misión: @Model.MisionSeleccionada.Titulo</h3>
+    <p>@Model.MisionSeleccionada.Descripcion</p>
+    <p>Créditos: @Model.MisionSeleccionada.Recompensa</p>
 }
 else
 {

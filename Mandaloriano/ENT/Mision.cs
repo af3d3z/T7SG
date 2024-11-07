@@ -38,6 +38,10 @@ namespace ENT
         #endregion
 
         #region constructores
+        public Mision(int id) {
+            this._id = id;
+        }
+
         public Mision(int id, string titulo, string desc, int recompensa) { 
             this._id = id;
             this._titulo = titulo;
