@@ -17,7 +17,7 @@ namespace BL
         /// <returns></returns>
         public static List<Mision> GetMisionesBL() {
             List<Mision> listaMisiones = new List<Mision>();
-            if (DateTime.Now.Hour >= 0 && DateTime.Now.Hour <= 8)
+            if (DateTime.Now.Hour <= 8)
             {
                 listaMisiones = null;
             }

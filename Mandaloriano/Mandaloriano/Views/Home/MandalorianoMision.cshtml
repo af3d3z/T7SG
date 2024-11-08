@@ -9,7 +9,7 @@
         <select name="misionID">
             @foreach (var mision in Model.ListaMisiones)
             {
-                <option value="@mision.ID">@mision.Titulo</option>
+                <option selected="@(Model.MisionSeleccionada.ID == mision.ID ? "selected" : "")" value="@mision.ID">@mision.Titulo</option>
             }
         </select>
         <button type="submit">Ver detalles</button>
